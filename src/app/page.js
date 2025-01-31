@@ -1,7 +1,9 @@
+import Home from "@/pages/Home";
 
-
-export default function Home() {
+export default function Main() {
   return (
-    <div>this is home</div>
+    <div>
+      <Home/>
+    </div>
   );
 }
