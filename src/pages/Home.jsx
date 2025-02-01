@@ -7,6 +7,7 @@ import FinTechTabs from "@/components/FinTechTabs";
 import TrustedBy from "@/components/TrustedBy";
 import Company from "@/components/Company";
 import Footer from "@/components/Footer";
+import ContactUs from "@/components/ContactUs";
 
 
 
@@ -21,6 +22,7 @@ const Home = () => {
         <SvgBorder/>
         <TrustedBy/>
         <Company/>
+        <ContactUs/>
         <Footer/>
       </div>
     );
