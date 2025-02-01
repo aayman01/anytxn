@@ -4,6 +4,7 @@ import ImageSection from "@/components/ImageSection";
 import SvgBorder from "@/components/SvgBorder";
 import Philosophy from "@/components/Philosophy";
 import FinTechTabs from "@/components/FinTechTabs";
+import TrustedBy from "@/components/TrustedBy";
 
 
 
@@ -15,6 +16,8 @@ const Home = () => {
         <SvgBorder />
         <Philosophy/>
         <FinTechTabs/>
+        <SvgBorder/>
+        <TrustedBy/>
       </div>
     );
 };
