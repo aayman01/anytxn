@@ -4,6 +4,18 @@ import React, { useState, useEffect } from 'react';
 const ContactUs = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        setIsDesktop(window.innerWidth >= 1024);
+        
+        const handleResize = () => {
+            setIsDesktop(window.innerWidth >= 1024);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleMouseMove = (e) => {
         if (!isHovering) return;
@@ -18,6 +30,11 @@ const ContactUs = () => {
         });
     };
 
+    const getTransform = (multiplierX, multiplierY) => {
+        if (!isDesktop) return 'none';
+        return `translate3d(${mousePosition.x * multiplierX}px, ${mousePosition.y * multiplierY}px, 0)`;
+    };
+
     const handleMouseEnter = () => setIsHovering(true);
     const handleMouseLeave = () => {
         setIsHovering(false);
@@ -26,47 +43,51 @@ const ContactUs = () => {
 
     return (
       <div 
-        className="relative h-[500px] overflow-hidden w-full bg-[#007aff]"
+        className="relative h-[500px] md:h-[600px] lg:h-[500px] overflow-hidden w-full bg-[#007aff]"
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className="absolute top-[-1px] left-0 w-full h-full bg-white z-50"
-          style={{ clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 0%)" }}
+          className="absolute top-0 left-0 w-full h-full bg-white z-50"
+          style={{ clipPath: "polygon(0 0, 100% 0, 100% 30%, 0 0%)" }}
         ></div>
 
-        <div className="absolute top-[300px] left-[400px]  transform -translate-x-1/2 -translate-y-1/2 text-white text-start z-50">
-          <h1 className="text-[56px] font-semibold leading-[62px] text-[#FFF] montserrat-font">
-            Legacy no longer
-          </h1>
-          <p className="text-lg my-4 inter-font font-normal text-[#FFF] leading-[28px]">
-            Talk to us to find out how we can transform your organisation for
-            the future
-          </p>
-          <button className="bg-[#FE8B53] px-10 py-3 rounded-md text-white font-semibold inter-font text-lg hover:bg-[#ff894e] transition">
-            Contact Us ›
-          </button>
+        <div className="relative container mx-auto h-full px-4 flex items-center justify-start lg:justify-start">
+          <div className="text-white text-left lg:ml-20 z-50 mt-20 lg:mt-0">
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-semibold leading-tight lg:leading-[62px]">
+              Legacy no longer
+            </h1>
+            <p className="text-base md:text-lg my-4 md:my-6 font-normal leading-relaxed max-w-md mx-auto lg:mx-0">
+              Talk to us to find out how we can transform your organisation for
+              the future
+            </p>
+            <button className="bg-[#FE8B53] px-8 md:px-10 py-3 rounded-md lg:w-[212px] w-full text-white font-semibold text-lg hover:bg-[#ff894e] transition-all group">
+              <div className="flex items-center justify-center gap-2 group-hover:gap-4 transition-all duration-300">
+                <span>Contact Us</span>
+                <span className="inline-block">›</span>
+              </div>
+            </button>
+          </div>
         </div>
 
         <div className="">
           <svg
-            className="lg:block hidden absolute h-[120%] w-[120%] left-[-10%] top-[-10%]"
+            className="absolute h-[120%] w-[120%] left-[-10%] top-[-10%]"
             style={{ 
               clipPath: "polygon(90% 60%, -10% 0, 60%, 100% 0)",
-              transform: `translate3d(${mousePosition.x * 0.8}px, ${mousePosition.y * 0.5}px, 0)`,
-              transition: 'transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000)'
+              transform: getTransform(0.8, 0.5),
+              transition: 'transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+              pointerEvents: 'none'
             }}
             preserveAspectRatio="xMidYMid slice"
             viewBox="0 0 2316 1021"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <g id="cta-background-patterns">
               <g
                 id="dark-patterns"
                 style={{
-                  transform: `translate3d(${mousePosition.x * 1.2}px, ${mousePosition.y * 0.7}px, 0)`,
+                  transform: getTransform(1.2, 0.7),
                   transition: 'transform 1s cubic-bezier(0.215, 0.610, 0.355, 1.000)'
                 }}
               >
@@ -190,7 +211,7 @@ const ContactUs = () => {
               <g
                 id="light-patterns"
                 style={{
-                  transform: `translate3d(${mousePosition.x * -0.8}px, ${mousePosition.y * -0.2}px, 0)`,
+                  transform: getTransform(-0.8, -0.2),
                   transition: 'transform 1.3s cubic-bezier(0.215, 0.610, 0.355, 1.000)'
                 }}
               >

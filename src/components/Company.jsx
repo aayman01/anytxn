@@ -24,7 +24,7 @@ const Company = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-4">
+    <section className="max-w-6xl mx-auto px-4 mb-10">
       {/* Desktop Grid */}
       <div className="mt-28 grid md:grid-cols-3 gap-x-16 gap-y-[34px] max-md:hidden lg:grid-cols-5">
         {companies.map((company, index) => (
