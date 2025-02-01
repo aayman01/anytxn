@@ -25,7 +25,7 @@ const TrustedBy = () => {
         </div>
         <div className="flex items-center border-dashed border-[#0057BB70] max-lg:justify-between lg:flex-col max-lg:border-b">
           <h2
-            className="max-[280px]:text-[30px] text-[64px] lg:text-[96px] tracking-[-0.02em] font-semibold leading-none bg-clip-text"
+              className="max-[280px]:text-[30px] text-[64px] lg:text-[96px] tracking-[-0.02em] font-semibold leading-none bg-clip-text mb-2"
             style={{ color: "rgb(31, 128, 240)" }}
           >
             {"+"}
@@ -37,7 +37,7 @@ const TrustedBy = () => {
         </div>
         <div className="flex items-center border-dashed border-[#0057BB70] max-lg:justify-between lg:flex-col max-lg:border-b">
           <h2
-            className="max-[280px]:text-[30px] text-[64px] lg:text-[96px] tracking-[-0.02em] font-semibold leading-none text-[#0057BB] text-transparent bg-clip-text"
+            className="max-[280px]:text-[30px] text-[64px] lg:text-[96px] tracking-[-0.02em] font-semibold leading-none text-[#0057BB] bg-clip-text mb-2"
             style={{ color: "rgb(31, 128, 240)" }}
           >
             {">"}
