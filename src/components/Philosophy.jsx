@@ -1,8 +1,9 @@
 import Image from "next/image";
+import CardSection from "./CardSection";
 
 const Philosophy = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-12 bg-white">
+    <section className="flex flex-col items-center justify-center py-12 bg-white max-w-6xl mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center gap-8">
         <div className="bg-white shadow-lg p-6 rounded-lg text-center">
           <h2 className="text-blue-600 text-lg font-bold">CORE TECH</h2>
@@ -41,6 +42,8 @@ const Philosophy = () => {
           </p>
         </div>
       </div>
+      {/* card Section */}
+      <CardSection/>
     </section>
   );
 };
