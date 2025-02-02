@@ -191,7 +191,7 @@ export default function NavBar() {
             <button
               className={`border pl-6 pr-10 py-[13px] flex items-center group/highlight transition-all rounded-sm font-semibold ${
                 lastScrollY > 0
-                  ? "border-[#1F80F0] text-[#1F80F0] hover:bg-[#1F80F0] hover:text-white"
+                  ? "text-white hover:shadow-md bg-orange-400"
                   : "border-white text-white hover:bg-white hover:text-[#1F80F0]"
               }`}
             >
@@ -203,7 +203,7 @@ export default function NavBar() {
                 xmlns="http://www.w3.org/2000/svg"
                 className={`ml-2 transform transition-all duration-300 group-hover/highlight:translate-x-2 ${
                   lastScrollY > 0
-                    ? "fill-[#1F80F0] group-hover/highlight:fill-white"
+                    ? "fill-white group-hover/highlight:fill-white"
                     : "fill-white group-hover/highlight:fill-[#1F80F0]"
                 }`}
               >
