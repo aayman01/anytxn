@@ -49,7 +49,7 @@ const ContactUs = () => {
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className="absolute top-0 left-0 w-full h-full bg-white z-50"
+          className="absolute top-[-0.5px] left-0 w-full h-full bg-white z-50"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 30%, 0 0%)" }}
         ></div>
 

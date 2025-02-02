@@ -81,10 +81,10 @@ const FinTechTabs = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto lg:px-6 px-4">
+    <section className="max-w-6xl mx-auto lg:px-6 px-4 ">
       {/* Title Section */}
       <div className="text-center mb-8">
-        <h1 className="text-[#1F80F0] uppercase tracking-wide text-lg font-bold">
+        <h1 className="text-[#1F80F0] uppercase tracking-wider text-base font-semibold lg:mb-4">
           Technology Built for You
         </h1>
         <h2 className="text-[#0A2A4A] text-4xl font-bold mt-4">
@@ -128,7 +128,7 @@ const FinTechTabs = () => {
         {tabs.map((tab, index) => (
           <SwiperSlide key={index}>
             <div
-              className={`grid gap-8 items-center p-4 lg:p-12 border-x-[#E5E7EB] shadow-xl rounded-xl ${
+              className={`grid gap-8 items-center p-4 lg:p-12 bg-white border-b-[#E5E7EB] shadow-2xl rounded-xl ${
                 isMobile || isTablet ? "grid-cols-1" : "md:grid-cols-2 md:gap-8"
               }`}
             >

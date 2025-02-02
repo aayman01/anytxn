@@ -6,21 +6,21 @@ import "swiper/css";
 
 const Company = () => {
   const companies = [
-    "/assets/companys/c1.webp",
-    "/assets/companys/c2.webp",
-    "/assets/companys/c3.webp",
-    "/assets/companys/c4.webp",
-    "/assets/companys/c5.webp",
-    "/assets/companys/c6.webp",
-    "/assets/companys/c7.webp",
-    "/assets/companys/c8.webp",
-    "/assets/companys/c9.webp",
-    "/assets/companys/c10.webp",
-    "/assets/companys/c11.webp",
-    "/assets/companys/c12.webp",
-    "/assets/companys/c13.webp",
-    "/assets/companys/c14.webp",
-    "/assets/companys/c15.webp",
+    { src: "/assets/companys/c1.webp", name: "Bank of Chendge" },
+    { src: "/assets/companys/c2.webp", name: "Bank of China" },
+    { src: "/assets/companys/c3.webp", name: "Bank of Sahanghal" },
+    { src: "/assets/companys/c4.webp", name: "CGB" },
+    { src: "/assets/companys/c5.webp", name: "China Citic Bank" },
+    { src: "/assets/companys/c6.webp", name: "ON Bank" },
+    { src: "/assets/companys/c7.webp", name: "PING AN Bank" },
+    { src: "/assets/companys/c8.webp", name: "Postal Saving Bank" },
+    { src: "/assets/companys/c9.webp", name: "SEA" },
+    { src: "/assets/companys/c10.webp", name: "Shanghong Commercial Bank" },
+    { src: "/assets/companys/c11.webp", name: "VipFubon Consumer Bank" },
+    { src: "/assets/companys/c12.webp", name: "Xiamen International Bank" },
+    { src: "/assets/companys/c13.webp", name: "Xm" },
+    { src: "/assets/companys/c14.webp", name: "SPD Bank" },
+    { src: "/assets/companys/c15.webp", name: "Card Center" },
   ];
 
   return (
@@ -28,10 +28,14 @@ const Company = () => {
       {/* Desktop Grid */}
       <div className="mt-28 grid md:grid-cols-3 gap-x-16 gap-y-[34px] max-md:hidden lg:grid-cols-5">
         {companies.map((company, index) => (
-          <picture key={index} className="flex items-center justify-center">
+          <picture 
+            key={index} 
+            className="flex items-center justify-center"
+            title={company.name}
+          >
             <Image
-              src={company}
-              alt={`company-${index + 1}`}
+              src={company.src}
+              alt={company.name}
               width={176}
               height={121}
             />
@@ -55,8 +59,8 @@ const Company = () => {
             <SwiperSlide key={index}>
               <div className="flex items-center justify-center p-4">
                 <Image
-                  src={company}
-                  alt={`company-${index + 1}`}
+                  src={company.src}
+                  alt={company.name}
                   width={176}
                   height={121}
                   className="w-full h-auto"
