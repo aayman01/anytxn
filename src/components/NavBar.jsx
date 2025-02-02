@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,22 +12,32 @@ export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const controlNavbar = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false); // Scrolling down
+  // Debounced scroll handler
+  const controlNavbar = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    requestAnimationFrame(() => {
+      if (currentScrollY > lastScrollY && currentScrollY > 300) {
+        setIsVisible(false);
       } else {
-        setIsVisible(true); // Scrolling up
+        setIsVisible(true);
       }
-
       setLastScrollY(currentScrollY);
+    });
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    let timeoutId;
+    const debouncedScroll = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(controlNavbar, 1);
     };
 
-    window.addEventListener("scroll", controlNavbar);
-    return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY]);
+    window.addEventListener("scroll", debouncedScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", debouncedScroll);
+      clearTimeout(timeoutId);
+    };
+  }, [controlNavbar]);
 
   if (!isVisible) return null;
 
@@ -35,9 +45,9 @@ export default function NavBar() {
     <AnimatePresence>
       <motion.nav
         initial={{ y: -100 }}
-        animate={{ y: isVisible ? 0 : -100 }}
+        animate={{ y: 0 }}
         exit={{ y: -100 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 px-4 transition-colors duration-300 ${
           lastScrollY > 0
             ? "lg:bg-white lg:shadow-md py-5 lg:py-5 bg-[#1F80F0]"

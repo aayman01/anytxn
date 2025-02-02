@@ -9,6 +9,7 @@ import Company from "@/components/Company";
 import Footer from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
 import Hero from "@/components/Hero";
+import CardSection from "@/components/CardSection";
 
 
 
@@ -20,6 +21,7 @@ const Home = () => {
         <Finance />
         <SvgBorder />
         <Philosophy/>
+        <CardSection/>
         <FinTechTabs/>
         <SvgBorder/>
         <TrustedBy/>

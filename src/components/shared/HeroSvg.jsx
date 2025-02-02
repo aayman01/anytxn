@@ -1,6 +1,29 @@
+'use client';
+
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect } from 'react';
 
 const HeroSvg = () => {
-    return (
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 30, stiffness: 100 };
+  const x = useSpring(mouseX, springConfig);
+  const y = useSpring(mouseY, springConfig);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const moveAmount = (e.clientX - window.innerWidth / 2) * 0.1;
+      mouseX.set(moveAmount);
+      mouseY.set((e.clientY - window.innerHeight / 2) * 0.1);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  return (
+    <>
       <svg
         className="hidden lg:block absolute h-full w-full object-cover inset-0"
         width="1920"
@@ -9,7 +32,14 @@ const HeroSvg = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="hero-background-desktop">
+        <motion.g
+          id="hero-background-desktop"
+          style={{
+            x,
+            y,
+            transition: "transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+          }}
+        >
           <g
             id="background"
             style={{
@@ -140,7 +170,7 @@ const HeroSvg = () => {
               ></path>
             </g>
           </g>
-        </g>
+        </motion.g>
         <defs>
           <filter
             id="filter0_f_132_3263"
@@ -532,7 +562,87 @@ const HeroSvg = () => {
           </linearGradient>
         </defs>
       </svg>
-    );
+
+      <div className="hidden lg:block absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className="absolute left-[-100px] top-1/2 -translate-y-1/2"
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 0.2 }}
+          transition={{ 
+            duration: 1.5,
+            type: "spring",
+            bounce: 0.3
+          }}
+          style={{ 
+            x: useSpring(useMotionValue(-100), { 
+              damping: 20, 
+              stiffness: 100 
+            })
+          }}
+        >
+          <motion.div
+            animate={{ 
+              x: [0, 100, 0],
+            }}
+            transition={{ 
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <circle cx="200" cy="200" r="200" fill="url(#gradient1)" />
+              <defs>
+                <radialGradient id="gradient1" cx="0.5" cy="0.5" r="0.5" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#00E9EA" stopOpacity="0.3" />
+                  <stop offset="1" stopColor="#1F80F0" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="absolute right-[-100px] top-1/2 -translate-y-1/2"
+          initial={{ x: 300, opacity: 0 }}
+          animate={{ x: 0, opacity: 0.2 }}
+          transition={{ 
+            duration: 1.5,
+            type: "spring",
+            bounce: 0.3
+          }}
+          style={{ 
+            x: useSpring(useMotionValue(100), { 
+              damping: 20, 
+              stiffness: 100 
+            })
+          }}
+        >
+          <motion.div
+            animate={{ 
+              x: [0, -100, 0],
+            }}
+            transition={{ 
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+          >
+            <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+              <circle cx="200" cy="200" r="200" fill="url(#gradient2)" />
+              <defs>
+                <radialGradient id="gradient2" cx="0.5" cy="0.5" r="0.5" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#00E9EA" stopOpacity="0.3" />
+                  <stop offset="1" stopColor="#1F80F0" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </motion.div>
+        </motion.div>
+      </div>
+    </>
+  );
 };
 
 export default HeroSvg;

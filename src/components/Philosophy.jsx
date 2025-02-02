@@ -1,50 +1,33 @@
-import Image from "next/image";
-import CardSection from "./CardSection";
-
+import React from 'react';
+import Image from 'next/image';
 const Philosophy = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-12 bg-white max-w-6xl mx-auto px-4">
-      <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="bg-white shadow-lg p-6 rounded-lg text-center">
-          <h2 className="text-blue-600 text-lg font-bold">CORE TECH</h2>
-          <h3 className="text-2xl font-semibold mt-2">
-            Artificial Intelligence
-          </h3>
-          <p className="text-gray-600 mt-2">
-            Using AI/ML to upgrade legacy processes, reduce cost, and improve
-            efficiency
-          </p>
-        </div>
-        <div className="flex items-center justify-center">
-          <div className="w-10 h-1 bg-gradient-to-r from-orange-400 to-blue-600"></div>
-        </div>
-        <div className="bg-white shadow-lg p-6 rounded-lg text-center">
-          <h2 className="text-orange-500 text-lg font-bold">MECHANISM</h2>
-          <h3 className="text-2xl font-semibold mt-2">Blockchain</h3>
-          <p className="text-gray-600 mt-2">
-            Enhanced security by eliminating intermediaries
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row items-center gap-12 mt-8">
-        <div className="bg-white shadow-lg p-6 rounded-lg text-center">
-          <h2 className="text-green-500 text-lg font-bold">INFRASTRUCTURE</h2>
-          <h3 className="text-2xl font-semibold mt-2">Cloud</h3>
-          <p className="text-gray-600 mt-2">Scale resources easily on-demand</p>
-        </div>
-        <div className="w-10 h-1 bg-gradient-to-b from-orange-400 to-blue-600 md:w-1 md:h-10"></div>
-        <div className="bg-white shadow-lg p-6 rounded-lg text-center">
-          <h2 className="text-yellow-500 text-lg font-bold">RESOURCE</h2>
-          <h3 className="text-2xl font-semibold mt-2">Data</h3>
-          <p className="text-gray-600 mt-2">
-            Valuable, actionable insights from mass data sources
-          </p>
+    <div>
+      <div className="flex items-center justify-center flex-col  overflow-x-hidden">
+        <h1 className="font-bold text-base text-[#1f80f0] montserrat-font leading-6 text-center ">
+          OUR PHILOSOPHY
+        </h1>
+        <p className="font-semibold text-[56px] leading-[62px] text-[#0b305b] mt-3 text-center md:w-[550px] mb-10 lg:w-full xs:w-full">
+          Human-centred innovation
+        </p>
+        <div className="max-w-7xl mx-auto mt-10">
+          <Image
+            src={"/assets/Philosophy/philosophy.webp"}
+            className="w-full hidden lg:block"
+            alt="Philosophy Image"
+            width={1200}
+            height={1200}
+          />
+          <Image
+            src={"/assets/Philosophy/p2.png"}
+            className="w-[417px] h-[480px] block lg:hidden"
+            alt="Philosophy Image"
+            width={417}
+            height={480}
+          />
         </div>
       </div>
-      {/* card Section */}
-      <CardSection/>
-    </section>
+    </div>
   );
 };
 
