@@ -8,6 +8,7 @@ import TrustedBy from "@/components/TrustedBy";
 import Company from "@/components/Company";
 import Footer from "@/components/Footer";
 import ContactUs from "@/components/ContactUs";
+import Hero from "@/components/Hero";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
     return (
       <div>
         <NavBar />
+        <Hero/>
         <Finance />
         <SvgBorder />
         <Philosophy/>

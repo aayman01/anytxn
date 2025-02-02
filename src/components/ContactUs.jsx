@@ -608,7 +608,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint1_linear_1_547"
@@ -619,7 +619,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint2_linear_1_547"
@@ -630,7 +630,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint3_linear_1_547"
@@ -641,7 +641,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint4_linear_1_547"
@@ -652,7 +652,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint5_linear_1_547"
@@ -663,7 +663,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint6_linear_1_547"
@@ -674,7 +674,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint7_linear_1_547"
@@ -685,7 +685,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#1F80F0"></stop>
-                <stop offset="1" stopColor="#0059BF" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#0059BF" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint8_linear_1_547"
@@ -696,7 +696,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint9_linear_1_547"
@@ -718,7 +718,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="white"></stop>
-                <stop offset="1" stopColor="#4B4B4B" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#4B4B4B" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint11_linear_1_547"
@@ -729,7 +729,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint12_linear_1_547"
@@ -740,7 +740,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint13_linear_1_547"
@@ -751,7 +751,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint14_linear_1_547"
@@ -762,7 +762,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint15_linear_1_547"
@@ -773,7 +773,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint16_linear_1_547"
@@ -784,7 +784,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint17_linear_1_547"
@@ -795,7 +795,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#00E9EA"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint18_linear_1_547"
@@ -806,7 +806,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#40FEFF"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint19_linear_1_547"
@@ -817,7 +817,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#40FEFF"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint20_linear_1_547"
@@ -828,7 +828,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#40FEFF"></stop>
-                <stop offset="1" stopColor="#1F80F0" stopOpacity="0.49"></stop>
+                <stop offset="1" stopColor="#1F80F0" stop-opacity="0.49"></stop>
               </linearGradient>
               <linearGradient
                 id="paint21_linear_1_547"
@@ -839,7 +839,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="white"></stop>
-                <stop offset="1" stopColor="#4B4B4B" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#4B4B4B" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint22_linear_1_547"
@@ -861,7 +861,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="white"></stop>
-                <stop offset="1" stopColor="#4B4B4B" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#4B4B4B" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint24_linear_1_547"
@@ -883,7 +883,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="white"></stop>
-                <stop offset="1" stopColor="#4B4B4B" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#4B4B4B" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint26_linear_1_547"
@@ -905,7 +905,7 @@ const ContactUs = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="white"></stop>
-                <stop offset="1" stopColor="#4B4B4B" stopOpacity="0"></stop>
+                <stop offset="1" stopColor="#4B4B4B" stop-opacity="0"></stop>
               </linearGradient>
               <linearGradient
                 id="paint28_linear_1_547"

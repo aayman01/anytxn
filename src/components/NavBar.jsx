@@ -15,18 +15,18 @@ export default function NavBar() {
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false); // Scrolling down
       } else {
         setIsVisible(true); // Scrolling up
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
   if (!isVisible) return null;
@@ -37,14 +37,14 @@ export default function NavBar() {
         initial={{ y: -100 }}
         animate={{ y: isVisible ? 0 : -100 }}
         exit={{ y: -100 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
         className={`fixed top-0 left-0 right-0 z-50 px-4 transition-colors duration-300 ${
           lastScrollY > 0
             ? "lg:bg-white lg:shadow-md py-5 lg:py-5 bg-[#1F80F0]"
             : "lg:bg-transparent bg-[#1F80F0] lg:p-6 p-4"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between sm:px-6 lg:px-8 relative">
+        <div className="max-w-6xl mx-auto flex items-center justify-between sm:px-6 lg:px-8 relative">
           {/* Logo */}
           <div
             className={`${
@@ -57,7 +57,7 @@ export default function NavBar() {
               height="auto"
               width="164"
             >
-              <g clip-path="url(#clip0_3940_240)" fill="currentColor">
+              <g clipPath="url(#clip0_3940_240)" fill="currentColor">
                 <path d="M80.4531 4.06999H90.6886V29.89H95.5378V4.06999H106.208V0.421875H80.4531V4.06999Z"></path>
                 <path d="M185.343 0.421875V13.2371H170.881V0.421875H166.031V29.89H170.881V16.8864H185.343V29.89H190.145V0.421875H185.343Z"></path>
                 <path d="M108.619 12.9244V17.3862C108.619 24.2916 114.356 29.89 121.432 29.89H132.37V26.0304H121.539C117.361 26.0304 113.973 22.7245 113.973 18.6471V17.1145H132.37V13.1986H113.973V11.6661C113.973 7.58869 117.361 4.2827 121.539 4.2827H132.37V0.421875H121.432C114.356 0.421875 108.619 6.02027 108.619 12.9257V12.9244Z"></path>
@@ -83,7 +83,7 @@ export default function NavBar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white"
+            className="lg:hidden block z-50 text-white"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -110,6 +110,9 @@ export default function NavBar() {
                   </a>
                   <a className="block px-4 py-2 hover:bg-gray-100 border-t">
                     AnyBass
+                  </a>
+                  <a className="block px-4 py-2 hover:bg-gray-100 border-t">
+                    AnyPass
                   </a>
                 </div>
               )}
@@ -202,7 +205,7 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 top-[58px] z-50 lg:hidden w-full">
+          <div className="fixed inset-0 top-[58px] z-[200] lg:hidden w-full">
             <div className="bg-[#1F80F0] w-full mx-auto shadow-lg">
               <div className="flex flex-col p-6 space-y-6 text-white">
                 {/* Solutions Dropdown */}
@@ -297,4 +300,3 @@ export default function NavBar() {
     </AnimatePresence>
   );
 }
-

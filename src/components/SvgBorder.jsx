@@ -24,7 +24,7 @@ const SvgBorder = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#1F80F0"></stop>
-            <stop offset="1" stopColor="#1F80F0" stopOpacity="0"></stop>
+            <stop offset="1" stopColor="#1F80F0" stop-opacity="0"></stop>
           </linearGradient>
         </defs>
       </svg>

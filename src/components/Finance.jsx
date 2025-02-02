@@ -2,7 +2,7 @@ import ImageSection from "./ImageSection";
 
 const Finance = () => {
   return (
-    <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-16 lg:pt-38">
+    <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-16 lg:pt-40">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-6 relative">
         {/* Top Section */}
         <div className="order-1 md:col-span-1 space-y-6">

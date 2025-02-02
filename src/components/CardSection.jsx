@@ -1,42 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-// Custom hook for media query
-const useMediaQuery = (maxWidth) => {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${maxWidth}px)`);
-    const updateMatch = (e) => setMatches(e.matches);
-    
-    // Initial check
-    setMatches(media.matches);
-    
-    // Add listener
-    media.addEventListener('change', updateMatch);
-    
-    // Cleanup
-    return () => media.removeEventListener('change', updateMatch);
-  }, [maxWidth]);
-
-  return matches;
-};
 
 const CardSection = () => {
-    const isMobile = useMediaQuery(745);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-      setMounted(true);
-    }, []);
+    const isMobile = useMediaQuery({ maxWidth: 445 });
+    const isTablet = useMediaQuery({ minWidth: 445, maxWidth: 768 });
 
     const cards = [
       {
@@ -57,7 +28,7 @@ const CardSection = () => {
     ];
 
     const CardContent = ({ card }) => (
-      <div className="h-full space-y-6 bg-[#F8FCFF] rounded-[20px] p-8">
+      <div className={`h-full space-y-4 ${isTablet ? 'md:space-y-5' : 'md:space-y-6'} bg-[#F8FCFF] rounded-[20px] p-6 md:p-8`}>
         <div className="w-fit rounded-full">
           <Image
             src={card.image}
@@ -65,54 +36,29 @@ const CardSection = () => {
             height="50"
             sizes="50px"
             alt={card.title}
-            className="lg:h-[50px] lg:w-[50px] h-[32px] w-[32px]"
+            className={`h-[32px] w-full ${
+              isTablet ? 'md:h-[40px] md:w-[40px]' : 'md:h-[50px] md:w-[50px]'
+            }`}
             loading="lazy"
           />
         </div>
-        <h4 className="font-Montserrat text-[#0B305B] font-semibold lg:text-head-4">
+        <h4 className={`font-Montserrat text-[#0B305B] font-semibold ${
+          isMobile ? 'text-[18px]' : isTablet ? 'text-[20px]' : 'text-head-4'
+        }`}>
           {card.title}
         </h4>
-        <p className="text-[#0B305B] text-[14px]">
+        <p className={`text-[#0B305B] ${
+          isMobile ? 'text-[14px]' : 'text-[15px]'
+        } leading-relaxed`}>
           {card.description}
         </p>
       </div>
     );
-
-    if (!mounted) return null;
-
-    if (isMobile) {
-      return (
-        <div className="mt-16">
-          <Swiper
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            spaceBetween={20}
-            slidesPerView={'auto'}
-            centeredSlides={true}
-            loop={false}
-            className="mySwiper"
-            style={{
-              padding: '20px 50px',
-            }}
-          >
-            {cards.map((card, index) => (
-              <SwiperSlide 
-                key={index}
-                style={{
-                  width: '280px',
-                  height: 'auto'
-                }}
-              >
-                <CardContent card={card} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      );
-    }
-
+    
     return (
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-[30px] mt-16 mb-16">
+      <div className={`grid ${
+        isMobile ? 'grid-cols-1' : isTablet ? 'md:grid-cols-2' : 'lg:grid-cols-3'
+      } gap-5 md:gap-6 lg:gap-[30px] mt-8 md:mt-12 lg:mt-16 mb-8 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8`}>
         {cards.map((card, index) => (
           <CardContent key={index} card={card} />
         ))}
