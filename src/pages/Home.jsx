@@ -14,7 +14,7 @@ import ContactUs from "@/components/ContactUs";
 const Home = () => {
     return (
       <div>
-        {/* <NavBar /> */}
+        <NavBar />
         <Finance />
         <SvgBorder />
         <Philosophy/>
